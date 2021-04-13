@@ -1,150 +1,141 @@
-#Stwórz program, który na podstawie tabeli inflacji wartości oprocentowania kredytu,
+# Stwórz program, który na podstawie tabeli inflacji wartości oprocentowania kredytu,
 # kwoty początkowej kredytu i stałej wartości raty wyliczy wartość zadłużenia
 # w każdym miesiącu przez 2 nadchodzące lata.
 #
-#Niech program wydrukuje dla każdego miesiąca następującą linię:
-#Twoja pozostała kwota kredytu to X, to Y mniej niż w poprzednim miesiącu.
+# Niech program wydrukuje dla każdego miesiąca następującą linię:
+# Twoja pozostała kwota kredytu to X, to Y mniej niż w poprzednim miesiącu.
 #
-#Napisz program tak, by wysokość początkowego kredytu,
 # oprocentowanie kredytu (ponad inflację), i kwota raty były pobierane
 # ze standardowego wejścia (terminal).
 #
-#Przykładowe wartości kredytu i formułę do jego wyliczenia znajdziesz
+# Przykładowe wartości kredytu i formułę do jego wyliczenia znajdziesz
 # w załączniku powyżej. Skopiuj z niego wartości inflacji dla każdego miesiąca.
 #
-#Wyślij link do swojego repozytorium (nie spakowany kod).
+# Wyślij link do swojego repozytorium (nie spakowany kod).
 # Repozytorium powinno zawierać więcej, niż jeden commit.
 
-#Dodaje plik na repozytorium w GitHub, dodaje commit i zaczynam zadanie.
+# inflacja = inflation = inf(inf1 - inf24)
 
-print("Witamy na stronie banku. Podaj imię: ")
-user_name = input()
-print(user_name)
+tra = 12000.00000
+inf1 = 1.592824484
+inf2 = -0.453509101
+inf3 = 2.324671717
+inf4 = 1.261254407
+inf5 = 1.782526286
+inf6 = 2.329384541
+inf7 = 1.502229842
+inf8 = 1.782526286
+inf9 = 2.328848994
+inf10 = 0.616921348
+inf11 = 2.352295886
+inf12 = 0.337779545
+inf13 = 1.577035247
+inf14 = -0.292781443
+inf15 = 2.48619659
+inf16 = 0.267110318
+inf17 = 1.417952672
+inf18 = 1.054243267
+inf19 = 1.480520104
+inf20 = 1.577035247
+inf21 = -0.07742069
+inf22 = 1.165733399
+inf23 = -0.404186718
+inf24 = 1.499708521
 
-#inflacja = x
-x = (1.592824484)
+# pozyczka = pozostała kwota = the renaining amount = tra(tra - tra24)
+# tra = (1 + ((inf + 3) / 1200)) * tra - 200
 
-#pozyczka = y
-y = 12000
+tra1  = (1 + ((inf1 + 3) / 1200)) * tra - 200
+tra2 = (1 + ((inf2 + 3) / 1200)) * tra1 - 200
+tra3 = (1 + ((inf3 + 3) / 1200)) * tra2 - 200
+tra4 = (1 + ((inf4 + 3) / 1200)) * tra3 - 200
+tra5 = (1 + ((inf5 + 3) / 1200)) * tra4 - 200
+tra6 = (1 + ((inf6 + 3) / 1200)) * tra5 - 200
+tra7 = (1 + ((inf7 + 3) / 1200)) * tra6 - 200
+tra8 = (1 + ((inf8 + 3) / 1200)) * tra7 - 200
+tra9 = (1 + ((inf9 + 3) / 1200)) * tra8 - 200
+tra10 = (1 + ((inf10 + 3) / 1200)) * tra9 - 200
+tra11 = (1 + ((inf11 + 3) / 1200)) * tra10 - 200
+tra12 = (1 + ((inf12 + 3) / 1200)) * tra11 - 200
+tra13 = (1 + ((inf13 + 3) / 1200)) * tra12 - 200
+tra14 = (1 + ((inf14 + 3) / 1200)) * tra13 - 200
+tra15 = (1 + ((inf15 + 3) / 1200)) * tra14 - 200
+tra16 = (1 + ((inf16 + 3) / 1200)) * tra15 - 200
+tra17 = (1 + ((inf17 + 3) / 1200)) * tra16 - 200
+tra18 = (1 + ((inf18 + 3) / 1200)) * tra17 - 200
+tra19 = (1 + ((inf19 + 3) / 1200)) * tra18 - 200
+tra20 = (1 + ((inf20 + 3) / 1200)) * tra19 - 200
+tra21 = (1 + ((inf21 + 3) / 1200)) * tra20 - 200
+tra22 = (1 + ((inf22 + 3) / 1200)) * tra21 - 200
+tra23 = (1 + ((inf23 + 3) / 1200)) * tra22 - 200
+tra24 = (1 + ((inf24 + 3) / 1200)) * tra23 - 200
 
-#pozostała kwota = z
-z = (1+((x + 3)/1200))*y-200
+# month = mt(1 - 12)
 
-#m = wysokość raty
-m = y - z
+mt1 = "Styczeń"
+mt2 = "Luty"
+mt3 = "Marzec"
+mt4 = "Kwiecień"
+mt5 = "Maj"
+mt6 = "Czerwiec"
+mt7 = "Lipiec"
+mt8 = "Sierpień"
+mt9 = "Wrzesień"
+mt10 = "Październik"
+mt11 = "Listopad"
+mt12 = "Grudzień"
 
-print("\nTwoja pozostała kwota kredytu (Styczeń) to: " + str(z) + "\nTo: " + str(m) + " mniej niż w poprzednim miesiącu.")
+# difference = dif
+
+dif1 = tra - tra1
+dif2 = tra1 - tra2
+dif3 = tra2 - tra3
+dif4 = tra3- tra4
+dif5 = tra4- tra5
+dif6 = tra5 - tra6
+dif7 = tra6 - tra7
+dif8 = tra7 - tra8
+dif9 = tra8 - tra9
+dif10 = tra9 - tra10
+dif11 = tra10 - tra11
+dif12 = tra11 - tra12
+dif13 = tra12 - tra13
+dif14 = tra13 - tra14
+dif15 = tra14 - tra15
+dif16 = tra15 - tra16
+dif17 = tra16 - tra17
+dif18 = tra17 - tra18
+dif19 = tra18 -tra19
+dif20 = tra19 - tra20
+dif21 = tra20 - tra21
+dif22 = tra21 - tra22
+dif23 = tra22 - tra23
+dif24 = tra23 - tra24
 
 
-# Lista inflacja zaczyna się od lutego, kwota od stycznia.
-
-inflacja = [-0.453509101, 2.324671717, 1.261254407, 1.782526286, 2.329384541, 1.502229842, 1.782526286,
-            2.328848994, 0.616921348, 2.352295886, 0.337779545, 1.577035247, -0.292781443, 2.48619659,
-            0.267110318, 1.417952672, 1.054243267, 1.480520104, 1.577035247, -0.07742069, 1.165733399,
-            -0.404186718, 1.499708521]
-
-#kwota do spłaty = kwota
-
-kwota = [11845.92824, 11671.0662, 11522.85337, 11363.77154, 11209.06115, 11058.84232, 10900.33353,
-         10743.77614, 10591.4861, 10423.40991, 10269.90089, 10098.46645, 9936.983976, 9759.401966,
-         9604.020297, 9430.168126, 9264.886489, 9096.188242, 8930.151288, 8764.212635, 8585.557724,
-         8415.362011, 8233.565935, 8064.439807]
-
-#print(inflacja[]) Do wywolania elementu listy
-
-#pozostała kwota = z
-#z = (1+((x + 3)/1200))*y-200
-
-#pozostala kwota = pk
-pk = (1 + ((inflacja[0] + 3)/1200)) * kwota[0] - 200
-#wysokosc raty = wr
-wr = kwota[0] - pk
-print("\nTwoja pozostała kwota kredytu (Luty) to: " + str(pk) + "\nTo: " + str(wr) + " mniej niż w poprzednim miesiącu.")
-
-pk = (1 + ((inflacja[1] + 3)/1200)) * kwota[1] - 200
-wr = kwota[1] - pk
-print("\nTwoja pozostała kwota kredytu (Marzec) to: " + str(pk) + "\nTo: " + str(wr) + " mniej niż w poprzednim miesiącu.")
-
-pk = (1 + ((inflacja[2] + 3)/1200)) * kwota[2] - 200
-wr = kwota[2] - pk
-print("\nTwoja pozostała kwota kredytu (Kwiecień) to: " + str(pk) + "\nTo: " + str(wr) + " mniej niż w poprzednim miesiącu.")
-
-pk = (1 + ((inflacja[3] + 3)/1200)) * kwota[3] - 200
-wr = kwota[3] - pk
-print("\nTwoja pozostała kwota kredytu (Maj) to: " + str(pk) + "\nTo: " + str(wr) + " mniej niż w poprzednim miesiącu.")
-
-pk = (1 + ((inflacja[4] + 3)/1200)) * kwota[4] - 200
-wr = kwota[4] - pk
-print("\nTwoja pozostała kwota kredytu (Czerwiec) to: " + str(pk) + "\nTo: " + str(wr) + " mniej niż w poprzednim miesiącu.")
-
-pk = (1 + ((inflacja[5] + 3)/1200)) * kwota[5] - 200
-wr = kwota[5] - pk
-print("\nTwoja pozostała kwota kredytu (Lipiec) to: " + str(pk) + "\nTo: " + str(wr) + " mniej niż w poprzednim miesiącu.")
-
-pk = (1 + ((inflacja[6] + 3)/1200)) * kwota[6] - 200
-wr = kwota[6] - pk
-print("\nTwoja pozostała kwota kredytu (Sierpień) to: " + str(pk) + "\nTo: " + str(wr) + " mniej niż w poprzednim miesiącu.")
-
-pk = (1 + ((inflacja[7] + 3)/1200)) * kwota[7] - 200
-wr = kwota[7] - pk
-print("\nTwoja pozostała kwota kredytu (Wrzesień) to: " + str(pk) + "\nTo: " + str(wr) + " mniej niż w poprzednim miesiącu.")
-
-pk = (1 + ((inflacja[8] + 3)/1200)) * kwota[8] - 200
-wr = kwota[8] - pk
-print("\nTwoja pozostała kwota kredytu (Październik) to: " + str(pk) + "\nTo: " + str(wr) + " mniej niż w poprzednim miesiącu.")
-
-pk = (1 + ((inflacja[9] + 3)/1200)) * kwota[9] - 200
-wr = kwota[9] - pk
-print("\nTwoja pozostała kwota kredytu (Listopad) to: " + str(pk) + "\nTo: " + str(wr) + " mniej niż w poprzednim miesiącu.")
-
-pk = (1 + ((inflacja[10] + 3)/1200)) * kwota[10] - 200
-wr = kwota[10] - pk
-print("\nTwoja pozostała kwota kredytu (Grudzień) to: " + str(pk) + "\nTo: " + str(wr) + " mniej niż w poprzednim miesiącu.")
-
-pk = (1 + ((inflacja[11] + 3)/1200)) * kwota[11] - 200
-wr = kwota[11] - pk
-print("\nTwoja pozostała kwota kredytu (Styczeń) to: " + str(pk) + "\nTo: " + str(wr) + " mniej niż w poprzednim miesiącu.")
-
-pk = (1 + ((inflacja[12] + 3)/1200)) * kwota[12] - 200
-wr = kwota[12] - pk
-print("\nTwoja pozostała kwota kredytu (Luty) to: " + str(pk) + "\nTo: " + str(wr) + " mniej niż w poprzednim miesiącu.")
-
-pk = (1 + ((inflacja[13] + 3)/1200)) * kwota[13] - 200
-wr = kwota[13] - pk
-print("\nTwoja pozostała kwota kredytu (Marzec) to: " + str(pk) + "\nTo: " + str(wr) + " mniej niż w poprzednim miesiącu.")
-
-pk = (1 + ((inflacja[14] + 3)/1200)) * kwota[14] - 200
-wr = kwota[14] - pk
-print("\nTwoja pozostała kwota kredytu (Kwiecień) to: " + str(pk) + "\nTo: " + str(wr) + " mniej niż w poprzednim miesiącu.")
-
-pk = (1 + ((inflacja[15] + 3)/1200)) * kwota[15] - 200
-wr = kwota[15] - pk
-print("\nTwoja pozostała kwota kredytu (Maj) to: " + str(pk) + "\nTo: " + str(wr) + " mniej niż w poprzednim miesiącu.")
-
-pk = (1 + ((inflacja[16] + 3)/1200)) * kwota[16] - 200
-wr = kwota[16] - pk
-print("\nTwoja pozostała kwota kredytu (Czerwiec) to: " + str(pk) + "\nTo: " + str(wr) + " mniej niż w poprzednim miesiącu.")
-
-pk = (1 + ((inflacja[17] + 3)/1200)) * kwota[17] - 200
-wr = kwota[17] - pk
-print("\nTwoja pozostała kwota kredytu (Lipiec) to: " + str(pk) + "\nTo: " + str(wr) + " mniej niż w poprzednim miesiącu.")
-
-pk = (1 + ((inflacja[18] + 3)/1200)) * kwota[18] - 200
-wr = kwota[18] - pk
-print("\nTwoja pozostała kwota kredytu (Sierpień) to: " + str(pk) + "\nTo: " + str(wr) + " mniej niż w poprzednim miesiącu.")
-
-pk = (1 + ((inflacja[19] + 3)/1200)) * kwota[19] - 200
-wr = kwota[19] - pk
-print("\nTwoja pozostała kwota kredytu (Wrzesień) to: " + str(pk) + "\nTo: " + str(wr) + " mniej niż w poprzednim miesiącu.")
-
-pk = (1 + ((inflacja[20] + 3)/1200)) * kwota[20] - 200
-wr = kwota[20] - pk
-print("\nTwoja pozostała kwota kredytu (Październik) to: " + str(pk) + "\nTo: " + str(wr) + " mniej niż w poprzednim miesiącu.")
-
-pk = (1 + ((inflacja[21] + 3)/1200)) * kwota[21] - 200
-wr = kwota[21] - pk
-print("\nTwoja pozostała kwota kredytu (Listopad) to: " + str(pk) + "\nTo: " + str(wr) + " mniej niż w poprzednim miesiącu.")
-
-pk = (1 + ((inflacja[22] + 3)/1200)) * kwota[22] - 200
-wr = kwota[22] - pk
-print("\nTwoja pozostała kwota kredytu (Grudzień) to: " + str(pk) + "\nTo: " + str(wr) + " mniej niż w poprzednim miesiącu.")
+print("Welcome to the bank webside. You can get it information about your loan here.")
+input("Please give me your name: ")
+print(f"\nTwoja pozostała rata kredytu w miesiącu: \n{mt1}: {tra1} \nTo: {dif1} mniej niż miesiąc temu.")
+print(f"\nTwoja pozostała rata kredytu w miesiącu: \n{mt2}: {tra2} \nTo: {dif2} mniej niż miesiąc temu.")
+print(f"\nTwoja pozostała rata kredytu w miesiącu: \n{mt3}: {tra3} \nTo: {dif3} mniej niż miesiąc temu.")
+print(f"\nTwoja pozostała rata kredytu w miesiącu: \n{mt4}: {tra4} \nTo: {dif4} mniej niż miesiąc temu.")
+print(f"\nTwoja pozostała rata kredytu w miesiącu: \n{mt5}: {tra5} \nTo: {dif5} mniej niż miesiąc temu.")
+print(f"\nTwoja pozostała rata kredytu w miesiącu: \n{mt6}: {tra6} \nTo: {dif6} mniej niż miesiąc temu.")
+print(f"\nTwoja pozostała rata kredytu w miesiącu: \n{mt7}: {tra7} \nTo: {dif7} mniej niż miesiąc temu.")
+print(f"\nTwoja pozostała rata kredytu w miesiącu: \n{mt8}: {tra8} \nTo: {dif8} mniej niż miesiąc temu.")
+print(f"\nTwoja pozostała rata kredytu w miesiącu: \n{mt9}: {tra9} \nTo: {dif9} mniej niż miesiąc temu.")
+print(f"\nTwoja pozostała rata kredytu w miesiącu: \n{mt10}: {tra10} \nTo: {dif10} mniej niż miesiąc temu.")
+print(f"\nTwoja pozostała rata kredytu w miesiącu: \n{mt11}: {tra11} \nTo: {dif11} mniej niż miesiąc temu.")
+print(f"\nTwoja pozostała rata kredytu w miesiącu: \n{mt12}: {tra12} \nTo: {dif12} mniej niż miesiąc temu.")
+print(f"\nTwoja pozostała rata kredytu w miesiącu: \n{mt1}: {tra13} \nTo: {dif13} mniej niż miesiąc temu.")
+print(f"\nTwoja pozostała rata kredytu w miesiącu: \n{mt2}: {tra14} \nTo: {dif14} mniej niż miesiąc temu.")
+print(f"\nTwoja pozostała rata kredytu w miesiącu: \n{mt3}: {tra15} \nTo: {dif15} mniej niż miesiąc temu.")
+print(f"\nTwoja pozostała rata kredytu w miesiącu: \n{mt4}: {tra16} \nTo: {dif16} mniej niż miesiąc temu.")
+print(f"\nTwoja pozostała rata kredytu w miesiącu: \n{mt5}: {tra17} \nTo: {dif17} mniej niż miesiąc temu.")
+print(f"\nTwoja pozostała rata kredytu w miesiącu: \n{mt6}: {tra18} \nTo: {dif18} mniej niż miesiąc temu.")
+print(f"\nTwoja pozostała rata kredytu w miesiącu: \n{mt7}: {tra19} \nTo: {dif19} mniej niż miesiąc temu.")
+print(f"\nTwoja pozostała rata kredytu w miesiącu: \n{mt8}: {tra20} \nTo: {dif20} mniej niż miesiąc temu.")
+print(f"\nTwoja pozostała rata kredytu w miesiącu: \n{mt9}: {tra21} \nTo: {dif21} mniej niż miesiąc temu.")
+print(f"\nTwoja pozostała rata kredytu w miesiącu: \n{mt10}: {tra22} \nTo: {dif22} mniej niż miesiąc temu.")
+print(f"\nTwoja pozostała rata kredytu w miesiącu: \n{mt11}: {tra23} \nTo: {dif23} mniej niż miesiąc temu.")
+print(f"\nTwoja pozostała rata kredytu w miesiącu: \n{mt12}: {tra24} \nTo: {dif24} mniej niż miesiąc temu.")
